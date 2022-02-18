@@ -900,4 +900,8 @@ main .main-banner {
 .backtop {
   margin-top: 14px;
   display: none;
+  cursor: pointer;
+}
+.backtop .icon {
+  cursor: pointer;
 }
