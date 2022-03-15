@@ -1,11 +1,11 @@
 @font-face {
   font-family: "iconfont";
   /* project id 3158621 */
-  src: url('');
+  src: url("");
   src: url("?#iefix") format("embedded-opentype"),
-    url('http://at.alicdn.com/t/font_3158621_wxtv4ylndmh.woff2?t=1645000155515') format('woff2'),
-    url('http://at.alicdn.com/t/font_3158621_wxtv4ylndmh.woff?t=1645000155515') format('woff'),
-    url('http://at.alicdn.com/t/font_3158621_wxtv4ylndmh.ttf?t=1645000155515') format('truetype');
+    url("http://at.alicdn.com/t/font_3158621_wxtv4ylndmh.woff2?t=1645000155515") format("woff2"),
+    url("http://at.alicdn.com/t/font_3158621_wxtv4ylndmh.woff?t=1645000155515") format("woff"),
+    url("http://at.alicdn.com/t/font_3158621_wxtv4ylndmh.ttf?t=1645000155515") format("truetype");
 }
 
 body {
@@ -14,6 +14,7 @@ body {
 }
 
 /* 版心 */
+/* 改成 container合适*/
 .w {
   width: 1226px;
   margin: 0 auto;
@@ -110,6 +111,7 @@ body {
   color: #333;
   font-size: 16px;
 }
+
 .header-nav li a:hover {
   color: #ff6700;
 }
@@ -158,15 +160,22 @@ body {
 .header-nav-list {
   /* display: none; */
   position: absolute;
-  top: 100%;
+  top: 98px;
   left: 0;
   width: 100%;
   height: 0;
   border-top: 1px solid #e0e0e0;
   background: #fff;
-  box-shadow: 0 3px 4px rgb(0 0 0 /18%);
   overflow: hidden;
-  transition: all .5s;
+  transition: all 0.5s ;
+  z-index: 0;
+}
+
+/* 下拉栏的active效果 */
+.header-nav-list.active {
+  height: 229px;
+  box-shadow: 0 3px 4px rgb(0 0 0 /18%);
+  /* transition: all 0.5s; */
   z-index: 5;
 }
 
@@ -241,6 +250,7 @@ body {
   line-height: 42px;
   cursor: pointer;
 }
+
 .ff6700 {
   background-color: #ff6700;
 }
@@ -259,6 +269,7 @@ body {
   content: "\e658";
   color: #e0e0e0;
 }
+
 /* 鼠标经过显示侧边产品栏 */
 .banner-nav-sidelist {
   display: none;
@@ -270,16 +281,18 @@ body {
   border: 1px solid #e0e0e0;
   border-left: 0;
   background: #fff;
-  box-shadow: 0 8px 16px rgba(0,0,0,.18);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
   z-index: 20;
   overflow: hidden;
 }
+
 .banner-nav-sidelist ul {
   display: block;
   float: left;
   width: 248px;
   height: 458px;
 }
+
 .banner-nav-sidelist ul li {
   width: 265px;
   height: 76px;
@@ -287,16 +300,19 @@ body {
   line-height: 40px;
   /* background-color: #ff6700; */
 }
+
 .banner-nav-sidelist ul li a {
   line-height: 40px;
   color: #333;
 }
+
 .banner-nav-sidelist ul li img {
   float: left;
   width: 40px;
   height: 40px;
   margin-right: 12px;
 }
+
 .banner-nav-sidelist ul li p {
   float: left;
   width: 172px;
@@ -314,26 +330,20 @@ body {
   overflow: hidden;
 }
 
-.banner-focus ul {
+.banner-focus ul li{
   position: absolute;
   top: 0;
   left: 0;
-  width: 400%;
-  /* transition: all 1s; */
+  visibility: hidden;
+  transition: all 1s linear;
+  opacity: 0;
 }
-
-.banner-focus ul li {
-  float: left;
-  width: 1226px;
-  height: 460px;
-}
-
-.banner-focus ul li a {
-  display: block;
+.banner-focus .focus-active {
+  visibility: visible;
+  opacity: 1;
 }
 
 .banner-focus img {
-  display: block;
   width: 1226px;
   height: 460px;
 }
@@ -346,7 +356,7 @@ body {
   width: 41px;
   height: 69px;
   background: url("../images/icon-slides.png");
-  z-index: 1;
+  z-index: 2;
 }
 
 .arrowl {
@@ -387,14 +397,14 @@ body {
   border-color: hsla(0, 0%, 100%, 0.3);
   border-radius: 10px;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 00.4);
   cursor: pointer;
 }
 
 .circle li:hover,
 .circle .circle-active {
-  background: hsla(0, 0%, 100%, 0.4);
-  border-color: rgba(0, 0, 0, 0.4);
+  background: hsla(0, 0%, 100%, 00.4);
+  border-color: rgba(0, 0, 0, 00.4);
 }
 
 .recommend {
@@ -452,8 +462,8 @@ body {
   padding-top: 18px;
   text-overflow: ellipsis;
   color: #fff;
-  opacity: .7;
-  transition: opacity .2s;
+  opacity: 0.7;
+  transition: opacity 0.2s;
 }
 
 .service li a:hover {
@@ -523,7 +533,7 @@ main .main-banner {
   font-size: 16px;
   line-height: 58px;
   color: #424242;
-  transition: all .4s;
+  transition: all 0.4s;
 }
 
 .box-hd .more a i {
@@ -537,7 +547,7 @@ main .main-banner {
   background: #b0b0b0;
   color: #fff;
   vertical-align: 1px;
-  transition: all .4s;
+  transition: all 0.4s;
 }
 
 .box-bd {
@@ -668,7 +678,7 @@ main .main-banner {
   border-radius: 12px;
   text-align: center;
   background-color: #424242;
-  background-color: rgba(0, 0, 0, .6);
+  background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
   transition: all .2s;
 }
@@ -902,6 +912,7 @@ main .main-banner {
   display: none;
   cursor: pointer;
 }
+
 .backtop .icon {
   cursor: pointer;
 }
