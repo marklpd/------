@@ -1,11 +1,14 @@
 @font-face {
   font-family: "iconfont";
   /* project id 3158621 */
-  src: url('');
+  src: url("");
   src: url("?#iefix") format("embedded-opentype"),
-    url('http://at.alicdn.com/t/font_3158621_wxtv4ylndmh.woff2?t=1645000155515') format('woff2'),
-    url('http://at.alicdn.com/t/font_3158621_wxtv4ylndmh.woff?t=1645000155515') format('woff'),
-    url('http://at.alicdn.com/t/font_3158621_wxtv4ylndmh.ttf?t=1645000155515') format('truetype');
+    url("http://at.alicdn.com/t/font_3158621_wxtv4ylndmh.woff2?t=1645000155515")
+      format("woff2"),
+    url("http://at.alicdn.com/t/font_3158621_wxtv4ylndmh.woff?t=1645000155515")
+      format("woff"),
+    url("http://at.alicdn.com/t/font_3158621_wxtv4ylndmh.ttf?t=1645000155515")
+      format("truetype");
 }
 
 body {
@@ -166,8 +169,13 @@ body {
   background: #fff;
   box-shadow: 0 3px 4px rgb(0 0 0 /18%);
   overflow: hidden;
-  transition: all .5s;
   z-index: 5;
+}
+
+/* 下拉栏的active效果 */
+.header-nav-list.active {
+  height: 229px;
+  transition: all 0.5s;
 }
 
 .header-nav-list ul {
@@ -231,11 +239,11 @@ body {
   background: rgba(105, 101, 101, 0.6);
 }
 
-.banner-nav>ul {
+.banner-nav > ul {
   padding: 20px 0;
 }
 
-.banner-nav>ul>li {
+.banner-nav > ul > li {
   width: 234px;
   height: 42px;
   line-height: 42px;
@@ -245,13 +253,13 @@ body {
   background-color: #ff6700;
 }
 
-.banner-nav>ul>li>a {
+.banner-nav > ul > li > a {
   float: left;
   padding-left: 30px;
   color: #fff;
 }
 
-.banner-nav>ul>li::after {
+.banner-nav > ul > li::after {
   float: right;
   margin-right: 20px;
   font-size: 20px;
@@ -270,7 +278,7 @@ body {
   border: 1px solid #e0e0e0;
   border-left: 0;
   background: #fff;
-  box-shadow: 0 8px 16px rgba(0,0,0,.18);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
   z-index: 20;
   overflow: hidden;
 }
@@ -319,7 +327,7 @@ body {
   top: 0;
   left: 0;
   width: 400%;
-  /* transition: all 1s; */
+  transition: all 1s;
 }
 
 .banner-focus ul li {
@@ -452,8 +460,8 @@ body {
   padding-top: 18px;
   text-overflow: ellipsis;
   color: #fff;
-  opacity: .7;
-  transition: opacity .2s;
+  opacity: 0.7;
+  transition: opacity 0.2s;
 }
 
 .service li a:hover {
@@ -523,7 +531,7 @@ main .main-banner {
   font-size: 16px;
   line-height: 58px;
   color: #424242;
-  transition: all .4s;
+  transition: all 0.4s;
 }
 
 .box-hd .more a i {
@@ -537,7 +545,7 @@ main .main-banner {
   background: #b0b0b0;
   color: #fff;
   vertical-align: 1px;
-  transition: all .4s;
+  transition: all 0.4s;
 }
 
 .box-bd {
@@ -546,7 +554,7 @@ main .main-banner {
 
 .box-bd .sidebox {
   float: left;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 }
 
 .box-bd .sidebox img {
@@ -573,7 +581,7 @@ main .main-banner {
   width: 234px;
   height: 300px;
   background-color: #fff;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 }
 
 .boxlist ul li a {
@@ -618,7 +626,7 @@ main .main-banner {
 .box-bd .sidebox:hover,
 .box-bd .boxlist ul li:hover {
   transform: translateY(-2px);
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, .1);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* 产品分类模块结束 */
@@ -668,16 +676,16 @@ main .main-banner {
   border-radius: 12px;
   text-align: center;
   background-color: #424242;
-  background-color: rgba(0, 0, 0, .6);
+  background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
-  transition: all .2s;
+  transition: all 0.2s;
 }
 
 .mian-video .boxlist .play i {
   font-size: 15px;
 }
 
-.mian-video .boxlist .figure:hover>span {
+.mian-video .boxlist .figure:hover > span {
   background-color: #ff6700;
   border-color: #ff6700;
 }
@@ -760,7 +768,7 @@ main .main-banner {
   color: #ff6700;
 }
 
-.footer-help-links .contact>a {
+.footer-help-links .contact > a {
   display: inline-block;
   width: 120px;
   height: 30px;
@@ -771,7 +779,7 @@ main .main-banner {
   color: #ff6700;
 }
 
-.footer-help-links .contact>a:hover {
+.footer-help-links .contact > a:hover {
   color: #fff;
   background-color: #ff6700;
 }
