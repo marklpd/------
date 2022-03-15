@@ -6,11 +6,19 @@ window.addEventListener("load", function () {
       navItem[i].setAttribute("index", i);
       navItem[i].addEventListener("mouseover", function () {
         var index = this.getAttribute("index");
+        for (var i = 0; i < navList.length; i++) {
+          navList[i].style.display = "none";
+      }
+        navList[index].style.display = "block";
+        navList[index].style.borderTop= "1px solid #e0e0e0";
         navList[index].className = "header-nav-list active";
       });
       navItem[i].addEventListener("mouseleave", function () {
         var index = this.getAttribute("index");
         navList[index].className = "header-nav-list";
+        setTimeout(() => {
+          navList[index].style.borderTop = "none";
+        }, 500);
       })
     }
 
@@ -23,12 +31,12 @@ window.addEventListener("load", function () {
       this.className = "ff6700";
       var index = this.getAttribute("index");
       sideList[index].style.display = "block";
-    })
+    });
     navLi[i].addEventListener("mouseleave", function () {
       this.className = "";
       var index = this.getAttribute("index");
       sideList[index].style.display = "none";
-    })
+    });
   }
   // 回到顶部
   var main = document.querySelector("main");
@@ -40,9 +48,9 @@ window.addEventListener("load", function () {
     } else {
       backTop.style.display = "none";
     }
-  })
-  //点击返回
+  });
+  // 点击返回
   backTop.addEventListener("click", function () {
     window.scroll(0, 0);
-  })
-})
+  });
+});

@@ -19,7 +19,6 @@ window.addEventListener("load", function () {
     // 手动调用点击事件
     arrowr.click();
   }, 3000);
-
   function animate(obj, target, callback) {
     for (var i = 0; i < obj.length; i++) {
       obj[i].className="";
@@ -30,14 +29,18 @@ window.addEventListener("load", function () {
       callback && callback();
     }, 1000);
   }
-
   function circleChange() {
     for (var j = 0; j < ol.children.length; j++) {
       ol.children[j].className = "";
     }
     ol.children[ol.children.length - circle].className = "circle-active";
   }
-
+  /**
+   * @name: arrListener
+   * @msg: 生成arrow的监听器
+   * @param {*} arrow
+   * @return {() => {}} listener
+   */
   const arrListener = (arrow) => {
     return () => {
       // 判断节流阀是否开启，开启才执行动画
@@ -84,7 +87,6 @@ window.addEventListener("load", function () {
   arrowr.addEventListener("click", arrListener("arrowr"));
   // 左侧按钮
   arrowl.addEventListener("click", arrListener("arrowl"));
-
   // 鼠标在轮播图上时清除定时器
   focus.addEventListener('mouseover', () => {
     clearInterval(timer);
@@ -98,7 +100,7 @@ window.addEventListener("load", function () {
     }, 3000);
   })
 
-  //鼠标经过显示二维码
+  // 鼠标经过显示二维码
   var wximg = document.querySelector("#wx-img");
   var wx = document.querySelector(".wx");
   wx.addEventListener("mouseenter", function () {
